@@ -1,4 +1,6 @@
 # test_ziphy
+
+```
 Test Python
 
 Write a function that builds a tree based on a list of tuples of id (parent id, offspring id),
@@ -32,6 +34,8 @@ expected = {
 }
 
 assert to_tree(source) == expected
-
+```
 ====================
+
+
 Не использую нотации типов, т.к. их нет в условиях и входящем коде задачи.
