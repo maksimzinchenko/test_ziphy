@@ -1,3 +1,4 @@
+import random
 
 source = [
     (None, 'a'),
@@ -19,7 +20,7 @@ def to_tree(source):
     '''
     List of tuples of refs to tree
     '''
-    nodes = {id: {} for _, id in source}
+    nodes = {ref_id: {} for _, ref_id in source}
     tree = {}
     for parent, child in source:
         if parent is None:
