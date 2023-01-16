@@ -38,4 +38,7 @@ assert to_tree(source) == expected
 ====================
 
 
-Не использую нотации типов, т.к. их нет в условиях и входящем коде задачи.
+Solution:
+In the first pass, we create a hash table of nodes id's.
+In the second pass, we create root nodes, if the parent is specified as None or rebind - we generate a chain-branch of nodes from the hash table.
+At the output, the created node trees from the hash table will be attached to the root object.
