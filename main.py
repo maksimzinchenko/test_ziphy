@@ -1,3 +1,4 @@
+
 source = [
     (None, 'a'),
     (None, 'b'),
@@ -16,22 +17,15 @@ source = [
 
 def to_tree(source):
     '''
-    Converts tuple list to tree from dicts
+    List of tuples of refs to tree
     '''
+    nodes = {id: {} for _, id in source}
     tree = {}
-    for i in source[::-1]:
-        element = {}
-        if i[1] not in tree:
-            element = {i[1]: {}}
+    for parent, child in source:
+        if parent is None:
+            tree[child] = nodes[child]
         else:
-            element = {i[1]: tree[i[1]]}
-            tree.pop(i[1])
-        if i[0] in tree:
-            tree[i[0]].update(element)
-        else:
-            tree[i[0]] = element
-    # remove None from tree root and sort tree dict
-    tree = dict(sorted(tree[None].items()))
+            nodes[parent][child] = nodes[child]
     return tree
 
 
