@@ -29,6 +29,7 @@ def to_tree2(source):
             nodes[parent][child] = nodes[child]
     return tree
 
+
 def to_tree(source):
     '''
     List of tuples of refs to tree
