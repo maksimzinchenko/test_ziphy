@@ -16,26 +16,13 @@ source = [
 ]
 
 
-def to_tree2(source):
-    '''
-    List of tuples of refs to tree
-    '''
-    nodes = {ref_id: {} for _, ref_id in source}
-    tree = {}
-    for parent, child in source:
-        if parent is None:
-            tree[child] = nodes[child]
-        else:
-            nodes[parent][child] = nodes[child]
-    return tree
-
 def to_tree(source):
     '''
     List of tuples of refs to tree
     '''
     nodes = {}
     tree = {}
-    
+
     for parent, child in source:
         nodes[child] = nodes.get(child, {})
         if parent is None:
